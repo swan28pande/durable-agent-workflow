@@ -1,0 +1,21 @@
+[project]
+name = "durable-agent-workflow"
+version = "0.1.0"
+description = "Durable graph-based workflow engine for multi-agent orchestration"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "langgraph>=0.2",
+    "langgraph-checkpoint-redis>=0.1",
+    "redis>=5.0",
+    "psycopg[binary]>=3.1",
+]
+
+[project.scripts]
+durable-workflow = "durable_workflow.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
